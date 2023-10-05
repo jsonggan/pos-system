@@ -3,6 +3,7 @@ import './App.css';
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SelectLanguage from './pages/selectLanguage';
+import Menu from './pages/menu';
 
 /** 
  * @param {Object} props
@@ -11,9 +12,10 @@ import SelectLanguage from './pages/selectLanguage';
  */
 function App(props) {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<SelectLanguage/>} />
+        <Route path="/menu" element={<Menu/>} />
       </Routes>
     </BrowserRouter>
   );
